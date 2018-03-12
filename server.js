@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
@@ -90,6 +91,6 @@ app.post('/addToFavorites', (req, res)=>{
   }
 });
 
-app.listen(3000, function(){
-  console.log("Listening on port 3000");
+app.listen(port, function(){
+  console.log(`Listening on port ${port}`);
 });
