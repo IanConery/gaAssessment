@@ -1,8 +1,8 @@
-const port = process.env.PORT || 3000;
+
 function moreInfo(el){
   const imdbID = $(el).attr('id');
   $.ajax({
-      url: `http://localhost:${port}/fullDescription`,
+      url: `/fullDescription`,
       data: {movieId: imdbID},
       success: (result)=>{
         $('#more-info .modal-body').append(`<ul><li><div>${result.Title}</div></li><li>Rating: ${result.Rated}</li><li>Actors: ${result.Actors}</li><li>Director: ${result.Director}</li><li>Plot: ${result.Plot}</li></ul>`);
@@ -18,7 +18,7 @@ function addToFavs(el){
   $(el).hide();
   $.ajax({
     type: 'POST',
-    url: `http://localhost:${port}/addToFavorites`,
+    url: `/addToFavorites`,
     data: {title, imdbID},
   });
 };
@@ -29,7 +29,7 @@ $(document).ready(()=>{
     const text = $('#input-box').val();
     $('.spinner-box').toggle();
     $.ajax({
-      url: `http://localhost:${port}/search`,
+      url: `/search`,
       data: {queryString: text},
       success: (result)=>{
         if(result && result.length > 0){
@@ -47,7 +47,7 @@ $(document).ready(()=>{
 
   $('.favorite').on('click', ()=>{
     $.ajax({
-      url: `http://localhost:${port}/favorites`,
+      url: `/favorites`,
       success: (result)=>{
         if(result && result.length > 0){
           result.forEach((movie)=>{
