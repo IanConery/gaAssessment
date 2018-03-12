@@ -33,6 +33,7 @@ $(document).ready(()=>{
       data: {queryString: text},
       success: (result)=>{
         if(result && result.length > 0){
+          $('#main-content li').remove();
           result.forEach((movie)=>{
             $('#main-content').append(`<li id="${movie.imdbID}" class="list-group-item container movie-info" onClick="moreInfo(this)"><div class="row"><div class="text-left col-sm-6 title">${movie.Title}</div><div class="text-right col-sm-4">${movie.Year}</div><div class="col-sm-2"><button id="fav-${movie.imdbID}" class="btn btn-outline-secondary" data-toggle='modal' onClick="addToFavs(this)">Favorite</button></div></div></li>`);
             $(`#fav-${movie.imdbID}`).on('click',(e)=>{e.stopPropagation()});
