@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Ian Conery">
+        <title>Movie Search</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./main.css">
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script src="./main.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Movie Search</a>
+                </div>
+                <div  class="navbar">
+                    <button class="btn btn-secondary favorite" data-toggle='modal'>Favorites</button>
+                </div>
+            </div>
+        </nav>
+        <div class="container text-box">
+            <p>Welcome to movie search, use the input box below to search omdbapi for movies, series, and games.</p>
+        </div>
+        <div class="container search-box">
+            <div class="input-group mb-3">
+              <input id="input-box" type="text" class="form-control" placeholder="Enter the name of a movie, tv show, or game here" aria-label="search-box">
+                <div class="input-group-append">
+                    <button id="find-movies" class="btn btn-outline-secondary" type="button">Find my show!</button>
+                </div>
+            </div>
+        </div>
+        <div class="spinner-box text-center">
+            <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>
+        </div>
+        <div id="content-box" class="container">
+            <ul id="main-content" class="list-group">
+
+            </ul>
+        </div>
+        <div id="favorite-box" class="modal" style="display: none;">
+            <div class="modal-header">
+                <h4>Favorites</h4>
+                <a class="close" data-dismiss="modal">×</a>
+            </div>
+            <div class="modal-body">
+                <ul id="favorite-list" class="list-group">
+
+                </ul>
+            </div>
+        </div>
+        <div id="more-info" class="modal" style="display: none;">
+            <div class="modal-header">
+                <a class="close-info" data-dismiss="modal">×</a>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </body>
+</html>

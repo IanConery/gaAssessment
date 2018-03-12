@@ -1,0 +1,44 @@
+
+.navbar {
+  height: 50px;
+  background: white;
+}
+.navbar a {
+  color: black;
+}
+.navbar-brand {
+  font-size: 36px;
+  color: black;
+}
+.navbar-right a {
+  font-size: 18px;
+}
+.favorite {
+  margin-top: 8px;
+}
+
+.text-box {
+  margin-top: 20px;
+}
+
+.spinner-box {
+  display: none;
+}
+
+#content-box {
+  margin-top: 20px;
+}
+
+#favorite-box {
+  background: whitesmoke;
+  height: 50%;
+  width:50%;
+  margin: 100px 25% 0;
+}
+
+#more-info {
+  background: whitesmoke;
+  height: 50%;
+  width: 50%;
+  margin: 100px 25% 0;
+}
